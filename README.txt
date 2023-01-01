@@ -5,16 +5,16 @@ Te algorithm stores the maximum earnings at each stage of the game in a dynamic 
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
 The rules for the game of blackjack are as follows:
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -> The player and the dealer are each dealt two cards. The dealer's first card is dealt face up, while the second card is dealt face down (the "hole" card). 
 The player's two cards are dealt face up.
 
@@ -30,7 +30,7 @@ In this code is designed to maximize the player's earnings by considering all po
 The algorithm stores the maximum earnings at each stage of the game in a dynamic programming table and uses recursion to calculate the maximum earnings from the remaining cards.
 
 The maxEarnings() function is a recursive function that takes in the following parameters:
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -> deck: the deck of cards as an integer array
 -> currentCardIndex: the current index of the card being considered
@@ -43,14 +43,14 @@ The function calculates the maximum earnings by considering two cases: taking th
 Then the function stores the calculated maximum earnings in the earningsTable array for future reference and returns the maximum earnings.
 
 The getCardValue() function:
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Takes in a card as an integer and returns its value in the game of blackjack. If the card is an ace, it returns the value of 11, because this is usually more beneficial to the hand. 
 If the card is a jack, queen, or king, it returns the value of 10.
 Otherwise, it returns the value of the card modulo 13 (the remainder when the card value is divided by 13), which gives the face value of the card.
 
 The getEarnings() function:
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Takes in the hand values of the player and the dealer as integers and returns the earnings for the player. 
 If the player's hand value is greater than 21 (bust), the function returns -1 because the player loses. 
@@ -58,18 +58,18 @@ If the dealer's hand value is greater than 21 (bust) or the player's hand value 
 Otherwise, it returns 0 because the game is a tie.
 
 The generateRandomDeck() function:
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Generates a random order of cards by creating an array of integers from 0 to 103 (the maximum number of cards in the deck), 
 shuffling the array using the shuffleArray() function, and returning the shuffled array.
 
 The shuffleArray() function:
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Shuffles an array of cards by using the Fisher-Yates shuffle algorithm, which randomly swaps the elements of the array.
 
 The main() function:
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Initializes the earningsTable array with -1 and gets the deck of cards from the user or generates a random deck using the getDeckFromUserOrGenerateRandom() function.
 It then calculates the maximum earnings using the maxEarnings() function and prints the result.
